@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-rams-bg text-rams-text font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    @apply bg-rams-accent/15;
+  }
+
+  select option {
+    background: #1a1a1a;
+    color: #e5e5e5;
+  }
+
+  /* Scrollbar - minimal */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-rams-border-strong rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-rams-text-muted;
+  }
+}
+
+@layer components {
+  .rams-card {
+    @apply bg-rams-surface border border-rams-border rounded-rams shadow-rams;
+  }
+
+  .rams-table {
+    @apply w-full text-sm;
+  }
+  .rams-table th {
+    @apply text-left font-normal text-rams-text-secondary text-2xs uppercase tracking-wider pb-2 pt-3 border-b border-rams-border;
+  }
+  .rams-table th:first-child {
+    @apply pl-4;
+  }
+  .rams-table th:last-child {
+    @apply pr-4;
+  }
+  .rams-table td {
+    @apply py-2.5 border-b border-rams-border/60 text-rams-text;
+  }
+  .rams-table td:first-child {
+    @apply pl-4;
+  }
+  .rams-table td:last-child {
+    @apply pr-4;
+  }
+  .rams-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .rams-input {
+    @apply bg-rams-surface border border-rams-border rounded-rams px-3 py-1.5 text-sm text-rams-text focus:outline-none focus:border-rams-text-secondary transition-colors;
+  }
+
+  .rams-select {
+    @apply bg-rams-surface border border-rams-border rounded-rams px-3 py-1.5 text-sm text-rams-text focus:outline-none focus:border-rams-text-secondary transition-colors cursor-pointer appearance-none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.625rem center;
+    background-size: 0.75rem;
+    padding-right: 2rem;
+  }
+
+  .rams-btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-rams transition-colors cursor-pointer select-none;
+  }
+  .rams-btn-primary {
+    @apply bg-rams-text text-rams-bg hover:bg-rams-text-secondary;
+  }
+  .rams-btn-secondary {
+    @apply bg-rams-surface text-rams-text border border-rams-border hover:bg-rams-bg;
+  }
+  .rams-btn-danger {
+    @apply bg-rams-fail text-white hover:bg-rams-fail/90;
+  }
+  .rams-btn-ghost {
+    @apply text-rams-text-secondary hover:text-rams-text hover:bg-rams-bg;
+  }
+
+  .rams-label {
+    @apply text-2xs font-medium text-rams-text-secondary uppercase tracking-wider;
+  }
+
+  .rams-status {
+    @apply inline-flex items-center gap-1.5 text-2xs font-medium;
+  }
+  .rams-status-dot {
+    @apply w-1.5 h-1.5 rounded-full;
+  }
+
+  .rams-tab {
+    @apply px-3 py-1.5 text-sm text-rams-text-secondary border-b-2 border-transparent cursor-pointer transition-colors;
+  }
+  .rams-tab-active {
+    @apply text-rams-text border-rams-text;
+  }
+}

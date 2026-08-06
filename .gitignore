@@ -1,0 +1,22 @@
+node_modules
+dist
+src-tauri/target
+LoadDock - Local k6 Testing Desktop App Project Specification.md
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Env / secrets (if ever added)
+.env
+.env.*
+*.pem
+*.key
+
+# Tauri generated artifacts
+src-tauri/gen/schemas
+
+# Logs / databases
+*.log
+*.db
+*.sqlite*
